@@ -1,0 +1,41 @@
+{
+  "name": "fablo-test-network-retailer",
+  "description": "Connection profile for Retailer in Fablo network",
+  "version": "1.0.0",
+  "client": {
+    "organization": "Retailer"
+  },
+  "organizations": {
+    "Retailer": {
+      "mspid": "RetailerMSP",
+      "peers": [
+        "peer0.user.com",
+        "peer0.retailer.com",
+        "peer0.administrator.com"
+      ],
+      "certificateAuthorities": [
+        "ca.retailer.com"
+      ]
+    }
+  },
+  "peers": {
+    "peer0.user.com": {
+      "url": "grpc://localhost:7041"
+    },
+    "peer0.retailer.com": {
+      "url": "grpc://localhost:7061"
+    },
+    "peer0.administrator.com": {
+      "url": "grpc://localhost:7081"
+    }
+  },
+  "certificateAuthorities": {
+    "ca.retailer.com": {
+      "url": "http://localhost:7060",
+      "caName": "ca.retailer.com",
+      "httpOptions": {
+        "verify": false
+      }
+    }
+  }
+}
